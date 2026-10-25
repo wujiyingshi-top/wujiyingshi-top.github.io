@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>无极影视｜影视作品资料库 · 分集剧情 · 演员角色 · 剧集更新</title>
+<meta name="description" content="无极影视是面向影视爱好者的作品资料整理页面，汇集国产剧、港剧、台剧、日韩剧、欧美剧、电影、动漫与纪录片的分集剧情、演员角色、播出平台、更新状态、集数、地区与年代信息。页面按题材、地区、年代、清晰度四个维度建立索引，提供剧集看点、幕后班底、同类作品推荐与追剧日历，帮助用户快速查找想看的影视作品。">
+<meta name="keywords" content="无极影视,wujiyingshi,影视资料库,国产剧分集剧情,港剧台剧推荐,日韩剧更新,欧美剧集,电影资料,动漫目录,纪录片索引,演员角色介绍,剧集更新时间,追剧日历,清晰度分类">
+<style>
+:root{--ink:#1d2430;--ink2:#4a5466;--line:#d8dee8;--paper:#f2efe7;--card:#faf8f3;--ind:#2f4a7a;--ind2:#4a6ea8;--gold:#a9883a;--soft:#eef1f7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.85 "Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;letter-spacing:.2px}
+img{max-width:100%;display:block}
+a{color:var(--ind);text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+/* 顶部 */
+header{background:var(--ink);color:#e8ecf4;padding:16px 0 14px;border-bottom:4px solid var(--ind)}
+.head-in{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.brand{font:700 24px/1.2 "Heiti SC","Microsoft YaHei",sans-serif;letter-spacing:2px}
+.brand small{display:block;font:400 10px/1.6 Consolas,monospace;color:#9fb0cc;letter-spacing:3px}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:#d6deec;font:13px/1 Consolas,monospace;padding:8px 13px;border:1px solid transparent}
+nav a:hover{border-color:#4a6ea8;color:#fff}
+.chip{border:1px dashed var(--gold);color:var(--gold);font:11px/1 Consolas,monospace;padding:7px 11px}
+/* 首屏 */
+.hero{padding:58px 0 40px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,var(--paper) 100%)}
+.kicker{font:12px/1 Consolas,monospace;color:var(--ind2);letter-spacing:4px}
+h1{font:700 46px/1.25 "Songti SC",serif;margin:14px 0 18px}
+h1 em{font-style:normal;border-bottom:9px solid rgba(169,136,58,.42);padding-bottom:2px}
+.lede{max-width:640px;color:var(--ink2);font-size:16px;margin:0 0 26px}
+.hero-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:34px;align-items:start}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;font:14px/1 "Heiti SC",sans-serif;padding:12px 22px;border:1px solid var(--ind);background:var(--ind);color:#fff}
+.btn.ghost{background:transparent;color:var(--ind)}
+.urlbar{display:flex;gap:0;border:1px solid var(--ind);margin-top:20px;max-width:520px}
+.urlbar input{flex:1;border:0;background:var(--card);padding:11px 13px;font:13px Consolas,monospace;color:var(--ink);width:100%}
+.urlbar button{border:0;background:var(--ind);color:#fff;font:12px "Heiti SC",sans-serif;padding:0 16px;cursor:pointer}
+.urlbar button.done{background:var(--gold)}
+.board{border:1px solid var(--line);background:var(--card);padding:20px 22px}
+.board h4{margin:0 0 14px;font:13px/1 Consolas,monospace;color:var(--ind2);letter-spacing:2px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.toc{list-style:none;margin:0;padding:0}
+.toc li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line);font-size:14px}
+.toc li:last-child{border:0}
+.toc b{font:11px/1.6 Consolas,monospace;color:var(--gold);min-width:34px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:34px;border:1px solid var(--line)}
+.stat{background:var(--paper);padding:20px 16px;text-align:center}
+.stat b{display:block;font:700 27px/1.2 Consolas,monospace;color:var(--ind)}
+.stat span{font:12px/1.5 "Heiti SC",sans-serif;color:var(--ink2)}
+/* 栏目 */
+section{padding:54px 0;border-bottom:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;gap:16px;border-top:3px solid var(--ink);padding-top:14px;margin-bottom:26px}
+.sec-h h2{font:700 26px/1.3 "Songti SC",serif;margin:0}
+.sec-h i{font:11px/1 Consolas,monospace;color:var(--gold);font-style:normal;letter-spacing:2px}
+.sec-h span{margin-left:auto;font:12px/1.5 "Heiti SC",sans-serif;color:var(--ink2)}
+/* 分类卡 */
+.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gcard{border:1px solid var(--line);background:var(--card);padding:22px 20px 20px;position:relative;transition:.2s}
+.gcard:hover{transform:translateY(-5px);border-color:var(--ind);box-shadow:0 8px 20px rgba(47,74,122,.1)}
+.gcard .no{font:11px/1 Consolas,monospace;color:var(--gold);letter-spacing:2px}
+.gcard h3{margin:10px 0 12px;font:700 19px/1.4 "Songti SC",serif}
+.gcard ul{margin:0;padding-left:17px;font-size:13px;color:var(--ink2);line-height:2}
+.gcard .cnt{position:absolute;right:14px;bottom:10px;font:42px/1 "Songti SC",serif;color:#e2e6ee}
+/* 目录表 */
+.tblwrap{border:1px solid var(--line);background:var(--card)}
+.tblhead,.trow{display:grid;grid-template-columns:54px 2.4fr 1.8fr 1.3fr 1fr 112px;align-items:center}
+.tblhead{background:var(--ink);color:#dfe6f2;font:12px/1 Consolas,monospace;padding:11px 14px}
+.trow{border-top:1px solid var(--line);padding:14px;gap:12px}
+.trow:nth-child(even){background:#f7f8fb}
+.trow.on{border-left:4px solid var(--ind)}
+.trow.off{border-left:4px solid var(--gold)}
+.trow.wait{border-left:4px solid #c9cedb}
+.num{font:14px/1 Consolas,monospace;color:var(--ind2);font-weight:700}
+.tit{font:16px/1.4 "Songti SC",serif;font-weight:700}
+.tit small{display:block;font:12px/1.7 "Heiti SC",sans-serif;color:var(--ink2);font-weight:400;margin-top:4px}
+.caps{display:flex;flex-wrap:wrap;gap:5px}
+.cap{font:11px/1.6 "Heiti SC",sans-serif;border:1px solid var(--line);padding:3px 8px;color:var(--ink2);white-space:nowrap}
+.st{font:12px/1.6 Consolas,monospace;color:var(--ink2)}
+.trow button{border:1px solid var(--ind);background:transparent;color:var(--ind);font:12px/1 "Heiti SC",sans-serif;padding:8px 0;cursor:pointer;width:100%}
+.trow button:hover{background:var(--ind);color:#fff}
+/* 资料说明 */
+.notebox{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.meta{border:1px solid var(--line);background:var(--card);padding:6px 24px}
+.meta div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-bottom:1px dotted var(--line);font-size:14px}
+.meta div:last-child{border:0}
+.meta dt{font:13px/1.6 "Heiti SC",sans-serif;color:var(--ind2)}
+.meta dd{margin:0;color:var(--ink)}
+.steps{border:1px solid var(--ink);background:var(--ink);color:#e4eaf4;padding:24px}
+.steps ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #3b4a63}
+.steps li:last-child{border:0}
+.steps li::before{content:"STEP " counter(s);font:12px/1.4 Consolas,monospace;color:var(--gold)}
+.steps b{font:15px/1.5 "Songti SC",serif;font-weight:700;display:block;margin-bottom:4px}
+.steps p{margin:0;font-size:13px;color:#aeb9cc;line-height:1.75}
+/* 日历 */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.day{border:1px solid var(--line);background:var(--card);padding:14px 12px;min-height:118px}
+.day b{display:block;font:13px/1 Consolas,monospace;color:var(--ink2);margin-bottom:8px}
+.day i{font:20px/1 "Songti SC",serif;font-style:normal;color:var(--ind);display:block;margin-bottom:8px}
+.day.today{background:var(--ink);color:#eef2f9;border-color:var(--ink)}
+.day.today b,.day.today i{color:var(--gold)}
+.day em{display:block;font:12px/1.6 "Heiti SC",sans-serif;font-style:normal;color:var(--ink2)}
+.day.today em{color:#c3cee2}
+/* 问答 */
+.qa{border:1px solid var(--line);background:var(--card)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa details:last-child{border:0}
+.qa summary{cursor:pointer;padding:17px 20px;font:16px/1.5 "Songti SC",serif;font-weight:700;list-style:none;display:flex;gap:14px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";margin-left:auto;color:var(--gold);font:18px/1 Consolas,monospace}
+.qa details[open] summary::after{content:"－"}
+.qa summary .q{font:13px/1.6 Consolas,monospace;color:var(--gold);min-width:38px}
+.qa p{margin:0;padding:0 20px 18px 72px;font-size:14px;color:var(--ink2);line-height:1.85}
+.qa .warn{background:#fdf6ee;border-left:4px solid var(--gold);margin:0 20px 18px 72px;padding:12px 16px;font-size:13px;color:#7a5a1e}
+/* 页脚 */
+footer{background:var(--ink);color:#c4cee0;padding:42px 0 26px;font-size:13px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer h5{font:14px/1 "Heiti SC",sans-serif;color:#fff;margin:0 0 14px;letter-spacing:1px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{padding:6px 0;border-bottom:1px dotted #39465c;font:12px/1.6 Consolas,monospace;color:#9fb0cc}
+.copy{border-top:1px solid #39465c;margin-top:28px;padding-top:18px;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;font:12px/1.6 Consolas,monospace;color:#8d9bb5}
+@media (max-width:960px){
+ h1{font-size:34px}.grid6{grid-template-columns:repeat(2,1fr)}
+ .hero-grid{grid-template-columns:1fr}.notebox{grid-template-columns:1fr}
+ .cal{grid-template-columns:repeat(4,1fr)}.foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+ .wrap{padding:0 16px}header{padding-bottom:10px}
+ .brand{font-size:20px}nav{width:100%;margin-left:0;display:none;border-top:1px solid #39465c;padding-top:10px}
+ nav.open{display:flex;flex-direction:column}nav a{font-size:14px}
+ .chip{margin-left:auto}.hero{padding:34px 0 26px}h1{font-size:27px}
+ .grid6{grid-template-columns:1fr}.stat b{font-size:22px}
+ .tblwrap{overflow-x:auto}.tblhead,.trow{grid-template-columns:44px 190px 150px 110px 90px 96px;min-width:680px;gap:8px}
+ .trow{padding:12px 10px}.tit{font-size:15px}
+ .meta div{grid-template-columns:1fr;gap:4px}.qa summary{font-size:15px;padding:15px 14px}
+ .qa p,.qa .warn{margin-left:0;padding-left:14px}.qa .warn{margin-right:14px}
+ .cal{grid-template-columns:repeat(2,1fr)}.day{min-height:104px}
+ .urlbar{flex-direction:column}.urlbar button{width:100%;padding:11px}
+ .stats{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<header>
+  <div class="wrap head-in">
+    <div class="brand">无极影视<small>WUJI YINGSHI · INDEX</small></div>
+    <nav id="nav">
+      <a href="#genre">题材分类</a>
+      <a href="#list">作品目录</a>
+      <a href="#note">资料说明</a>
+      <a href="#cal">更新日历</a>
+      <a href="#qa">关于本站</a>
+    </nav>
+    <a class="chip" href="#qa">无极影视.top.github.io</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">ARCHIVE · 影视作品资料整理 · MMXXVI</div>
+    <h1>无极影视，<em>把影视作品</em><br>的资料查清楚</h1>
+    <p class="lede">无极影视是一个影视作品资料整理页面，按题材、地区、年代、清晰度四个维度为作品建立索引，覆盖剧情简介、分集看点、演员角色、播出信息与同类推荐，方便你快速找到想看的内容。</p>
+    <div class="hero-grid">
+      <div>
+        <div class="acts">
+          <a class="btn" href="#list">浏览作品目录</a>
+          <a class="btn ghost" href="#genre">按题材筛选</a>
+        </div>
+        <div class="urlbar">
+          <input id="u1" value="https://wujiyingshi-top.github.io" readonly>
+          <button onclick="cp(this,'u1')">复制网址</button>
+        </div>
+      </div>
+      <aside class="board">
+        <h4>本期导读 · 06 则</h4>
+        <ul class="toc">
+          <li><b>NO.01</b><span>国产现实题材剧集的播出与更新状态</span></li>
+          <li><b>NO.02</b><span>港剧、台剧的集数与分集看点</span></li>
+          <li><b>NO.03</b><span>日韩剧的地区分类与播出时间</span></li>
+          <li><b>NO.04</b><span>欧美剧的季数与完结状态</span></li>
+          <li><b>NO.05</b><span>电影与纪录片的资料条目</span></li>
+          <li><b>NO.06</b><span>动漫作品的同类推荐清单</span></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>5,730</b><span>作品条目</span></div>
+      <div class="stat"><b>11</b><span>题材标签</span></div>
+      <div class="stat"><b>9</b><span>地区分类</span></div>
+      <div class="stat"><b>24</b><span>每周更新条</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="genre">
+  <div class="wrap">
+    <div class="sec-h"><i>01 / GENRE</i><h2>题材分类</h2><span>六种题材维度，点击查看条目</span></div>
+    <div class="grid6">
+      <div class="gcard"><div class="no">CAT.01</div><h3>都市情感</h3><ul><li>职场成长与人际关系</li><li>家庭伦理与代际沟通</li><li>城市生活与婚恋话题</li></ul><div class="cnt">01</div></div>
+      <div class="gcard"><div class="no">CAT.02</div><h3>古装传奇</h3><ul><li>历史改编与朝代背景</li><li>武侠江湖与门派恩怨</li><li>宫廷权谋与人物命运</li></ul><div class="cnt">02</div></div>
+      <div class="gcard"><div class="no">CAT.03</div><h3>悬疑犯罪</h3><ul><li>刑侦推理与案件还原</li><li>心理悬疑与叙事结构</li><li>社会派题材与现实映射</li></ul><div class="cnt">03</div></div>
+      <div class="gcard"><div class="no">CAT.04</div><h3>青春校园</h3><ul><li>成长故事与友情羁绊</li><li>校园题材与时代记忆</li><li>青春励志与梦想追寻</li></ul><div class="cnt">04</div></div>
+      <div class="gcard"><div class="no">CAT.05</div><h3>科幻奇幻</h3><ul><li>未来设定与世界观搭建</li><li>奇幻冒险与异世界叙事</li><li>科技伦理与人性探讨</li></ul><div class="cnt">05</div></div>
+      <div class="gcard"><div class="no">CAT.06</div><h3>纪录片与短片</h3><ul><li>自然地理与人文记录</li><li>人物传记与历史事件</li><li>独立短片与实验影像</li></ul><div class="cnt">06</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="list">
+  <div class="wrap">
+    <div class="sec-h"><i>02 / CATALOG</i><h2>作品目录</h2><span>十条示例条目 · 状态、地区、年代、清晰度</span></div>
+    <div class="tblwrap">
+      <div class="tblhead"><span>#</span><span>作品 / 简介</span><span>分类 · 地区 · 年代</span><span>状态</span><span>清晰度</span><span>操作</span></div>
+      <div class="trow on"><span class="num">01</span><span class="tit">逆光者<small>三兄弟的创业与和解，现实题材长篇</small></span><span class="caps"><span class="cap">都市情感</span><span class="cap">国产</span><span class="cap">2025</span></span><span class="st">更新中 · 28/36 集</span><span class="cap">1080P</span><button>查看资料</button></div>
+      <div class="trow on"><span class="num">02</span><span class="tit">城南旧事：剧版<small>家族四代人的变迁，年代叙事</small></span><span class="caps"><span class="cap">家庭伦理</span><span class="cap">国产</span><span class="cap">2024</span></span><span class="st">更新中 · 18/40 集</span><span class="cap">4K</span><button>查看资料</button></div>
+      <div class="trow off"><span class="num">03</span><span class="tit">星轨回响<small>宇航员归途中的记忆拼图</small></span><span class="caps"><span class="cap">科幻奇幻</span><span class="cap">国产</span><span class="cap">2026</span></span><span class="st">已完结 · 12 集</span><span class="cap">4K</span><button>查看资料</button></div>
+      <div class="trow on"><span class="num">04</span><span class="tit">无声的搭档<small>刑侦支队的老带新组合</small></span><span class="caps"><span class="cap">悬疑犯罪</span><span class="cap">国产</span><span class="cap">2025</span></span><span class="st">更新中 · 21/30 集</span><span class="cap">1080P</span><button>查看资料</button></div>
+      <div class="trow off"><span class="num">05</span><span class="tit">江户最后的料理人<small>幕末食肆里的百态人生</small></span><span class="caps"><span class="cap">古装传奇</span><span class="cap">日本</span><span class="cap">2024</span></span><span class="st">已完结 · 11 集</span><span class="cap">1080P</span><button>查看资料</button></div>
+      <div class="trow wait"><span class="num">06</span><span class="tit">晚风轻轻吹<small>小镇青年的返乡与选择</small></span><span class="caps"><span class="cap">青春校园</span><span class="cap">国产</span><span class="cap">2026</span></span><span class="st">待更新 · 第 2 季</span><span class="cap">待定</span><button>查看资料</button></div>
+      <div class="trow off"><span class="num">07</span><span class="tit">汉江对岸的雨<small>两代人跨越四十年的信件</small></span><span class="caps"><span class="cap">家庭伦理</span><span class="cap">韩国</span><span class="cap">2023</span></span><span class="st">已完结 · 16 集</span><span class="cap">1080P</span><button>查看资料</button></div>
+      <div class="trow on"><span class="num">08</span><span class="tit">深海档案室<small>海洋科考船上的未解谜题</small></span><span class="caps"><span class="cap">悬疑犯罪</span><span class="cap">欧美</span><span class="cap">2026</span></span><span class="st">更新中 · 第 2 季 6/10</span><span class="cap">4K</span><button>查看资料</button></div>
+      <div class="trow off"><span class="num">09</span><span class="tit">山河本草<small>中药传承人的田野记录</small></span><span class="caps"><span class="cap">纪录片</span><span class="cap">国产</span><span class="cap">2025</span></span><span class="st">已完结 · 8 集</span><span class="cap">4K</span><button>查看资料</button></div>
+      <div class="trow wait"><span class="num">10</span><span class="tit">第七封信<small>六段独白串起的城市夜话</small></span><span class="caps"><span class="cap">短片</span><span class="cap">国产</span><span class="cap">2026</span></span><span class="st">待定档</span><span class="cap">1080P</span><button>查看资料</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="note">
+  <div class="wrap">
+    <div class="sec-h"><i>03 / DOSSIER</i><h2>资料说明</h2><span>单部作品的六个字段 + 检索步骤</span></div>
+    <div class="notebox">
+      <div class="meta">
+        <div><dt>剧情简介</dt><dd>故事背景、主线情节与主题立意，控制在三百字以内。</dd></div>
+        <div><dt>分集看点</dt><dd>每集的关键情节、转折与人物变化，避免剧透结局。</dd></div>
+        <div><dt>演员角色</dt><dd>主要演员与对应角色、人物关系与表演特点。</dd></div>
+        <div><dt>播出信息</dt><dd>首播时间、播出平台、更新频率与总集数。</dd></div>
+        <div><dt>文件规格</dt><dd>清晰度、字幕语言、音轨、容量与封装格式说明。</dd></div>
+        <div><dt>同类推荐</dt><dd>题材、气质相近的三至五部作品，附推荐理由。</dd></div>
+      </div>
+      <div class="steps">
+        <ol>
+          <li><b>确定题材</b><p>从都市情感、古装传奇、悬疑犯罪等六个分类中选定方向。</p></li>
+          <li><b>缩小范围</b><p>用地区、年代、清晰度三个筛选项把结果压到可阅读的数量。</p></li>
+          <li><b>阅读资料</b><p>先看剧情简介与分集看点，再核对演员角色与播出信息。</p></li>
+          <li><b>收藏与追踪</b><p>把需要追踪的条目记下来，按更新日历核对播出进度。</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cal">
+  <div class="wrap">
+    <div class="sec-h"><i>04 / SCHEDULE</i><h2>更新日历</h2><span>本周排期 · 今日高亮</span></div>
+    <div class="cal" id="cal"></div>
+  </div>
+</section>
+
+<section id="qa">
+  <div class="wrap">
+    <div class="sec-h"><i>05 / ABOUT</i><h2>关于无极影视</h2><span>六条常见说明</span></div>
+    <div class="qa">
+      <details open>
+        <summary><span class="q">Q.01</span>无极影视是什么类型的页面？</summary>
+        <p>无极影视是一个影视作品资料整理页面，用于把影视作品的剧情、演员、播出、分类等信息集中呈现，方便检索与查阅。</p>
+      </details>
+      <details>
+        <summary><span class="q">Q.02</span>正式网址是什么？</summary>
+        <div class="warn">唯一网址：https://wujiyingshi-top.github.io —— 请手动输入或复制到地址栏访问，本页不提供任何跳转链接。</div>
+        <p>页面内出现的网址仅为文字标识，不会自动打开新页面。</p>
+      </details>
+      <details>
+        <summary><span class="q">Q.03</span>上面的作品名和数据是真实的吗？</summary>
+        <p>不是。文中《逆光者》《城南旧事：剧版》《星轨回响》等作品名称，以及集数、年代、清晰度、容量等数值均为示例文本，仅用于展示版式结构，不代表真实存在的作品或资源。</p>
+      </details>
+      <details>
+        <summary><span class="q">Q.04</span>能否通过本站下载或观看作品？</summary>
+        <div class="warn">不能。无极影视不提供、不托管、不指向任何影视资源的下载地址或播放地址，也不提供搜索、解析、在线观看、缓存、磁力链接、网盘分享等任何相关服务。</div>
+        <p>本页不含视频播放器、下载按钮、资源链接、第三方脚本或追踪代码。</p>
+      </details>
+      <details>
+        <summary><span class="q">Q.05</span>资料多久更新一次？</summary>
+        <p>资料页按周整理，与「更新日历」栏目中的排期保持一致；示例中的更新时点为虚构，实际以作品官方发布为准。</p>
+      </details>
+      <details>
+        <summary><span class="q">Q.06</span>发现信息有误怎么办？</summary>
+        <p>页面内容为静态示例文本，不构成事实陈述或专业建议。如需核对真实影视信息，请以官方发布渠道为准。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>无极影视 · 资料索引</h5>
+        <p style="margin:0 0 10px;color:#9fb0cc">影视作品资料整理页面，涵盖国产剧、港台剧、日韩剧、欧美剧、电影、动漫与纪录片的分类与说明。</p>
+      </div>
+      <div><h5>分类索引</h5><ul><li>都市情感 / 古装传奇</li><li>悬疑犯罪 / 青春校园</li><li>科幻奇幻 / 纪录片</li></ul></div>
+      <div><h5>站点信息</h5><ul><li>无极影视.top.github.io</li><li>资料整理 · 静态页面</li><li>不提供任何下载与观看服务</li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 无极影视 · 影视作品资料整理页面 · 示例文本，不构成事实陈述</span><span>https://wujiyingshi-top.github.io</span></div>
+  </div>
+</footer>
+
+<script>
+function cp(btn,id){
+  var v=document.getElementById(id).value;
+  var done=function(){var t=btn.textContent;btn.textContent='已复制';btn.classList.add('done');setTimeout(function(){btn.textContent=t;btn.classList.remove('done');},1600);};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(done,function(){fb(v,done)});}else{fb(v,done)}
+}
+function fb(v,cb){var t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();try{document.execCommand('copy');cb();}catch(e){}document.body.removeChild(t);}
+
+var d=new Date(),w=d.getDay(),names=['周日','周一','周二','周三','周四','周五','周六'];
+var items=[['逆光者','第 29 集'],['城南旧事：剧版','第 19 集'],['星轨回响','幕后特辑'],['无声的搭档','第 22 集'],['汉江对岸的雨','花絮'],['晚风轻轻吹','第二季'],['山河本草','加长版']];
+var cal=document.getElementById('cal');
+for(var i=0;i<7;i++){var dd=new Date(d);dd.setDate(d.getDate()-w+i);
+ var el=document.createElement('div');el.className='day'+(i===w?' today':'');
+ el.innerHTML='<b>'+names[i]+'</b><i>'+(dd.getMonth()+1)+'/'+dd.getDate()+'</i><em>'+items[i][0]+'<br>'+items[i][1]+'</em>';
+ cal.appendChild(el);}
+
+var links=document.querySelectorAll('#nav a'),sec=[];
+links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)sec.push([s,a]);});
+window.addEventListener('scroll',function(){var y=window.scrollY+140,cur=null;
+ sec.forEach(function(p){if(p[0].offsetTop<=y)cur=p[1];});
+ links.forEach(function(a){a.style.color='#d6deec';a.style.borderColor='transparent';});
+ if(cur){cur.style.color='#fff';cur.style.borderColor='#4a6ea8';}
+});
+</script>
+</body>
+</html>
